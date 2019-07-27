@@ -1,18 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class MenuSceneManager : MonoBehaviour
+namespace MenuScene
 {
-    // Start is called before the first frame update
-    void Start()
+    public class MenuSceneManager : MonoBehaviour
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

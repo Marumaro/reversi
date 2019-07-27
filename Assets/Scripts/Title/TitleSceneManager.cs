@@ -1,19 +1,33 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using Dialog;
 using UniRx;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class TitleSceneManager : MonoBehaviour
+namespace TitleScene
 {
-    [SerializeField] private Button _startButton = null;
-
-    private void Start()
+    public class TitleSceneManager : MonoBehaviour
     {
-        _startButton.OnClickAsObservable()
-            .Subscribe(_ =>
-            {
-                SceneManager.LoadSceneAsync("MenuScene");
-            })
-            .AddTo(this);
+        [SerializeField]
+        private Button _startButton = null;
+        
+        private void Start()
+        {
+            _startButton.OnClickAsObservable()
+                .Subscribe(_ =>
+                {
+                    SceneManager.LoadSceneAsync("MenuScene");
+                })
+                .AddTo(this);
+
+            var arg = new ConfirmationDialogArg(
+                "テスト",
+                "本文",
+                "OK",
+                null,
+                null);
+            
+            var dialog = DialogManager.Instance.Open<ConfirmationDialog>(arg);
+        }
     }
 }

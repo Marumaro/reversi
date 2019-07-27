@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class BootSceneManager : MonoBehaviour
+namespace BootScene
 {
-    private void Start()
+    public class BootSceneManager : MonoBehaviour
     {
-        
+        [SerializeField]
+        private GameObject _dontDestroyObject = null;
+
+        private void Start()
+        {
+            DontDestroyOnLoad(_dontDestroyObject);
+
+            SceneManager.LoadSceneAsync("TitleScene");
+        }
     }
 }
