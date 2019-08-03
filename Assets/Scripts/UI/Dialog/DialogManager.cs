@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Dialog
+namespace Reversi.Dialog
 {
     public class DialogManager : SingletonMonoBehaviour<DialogManager>
     {
@@ -44,7 +44,7 @@ namespace Dialog
         private DialogBase Create(DialogBase dialog, DialogArgBase arg)
         {
             var obj = Instantiate(dialog, _dialogRoot);
-            obj.Setup(arg);
+            obj.Initialize(arg);
 
             return obj;
         }
