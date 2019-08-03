@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Dialog
+namespace Reversi.Dialog
 {
     public class ConfirmationDialog : DialogBase
     {
@@ -15,13 +15,9 @@ namespace Dialog
         [SerializeField]
         private Text _confirmationButtonText = null;
         
-        public override void Setup(DialogArgBase argBase)
+        public override void Initialize(DialogArgBase argBase)
         {
-            var arg = argBase as ConfirmationDialogArg;
-            if (arg == null)
-            {
-                Debug.LogErrorFormat("{0} is different arg", arg);
-            }
+            var arg = ConvertArg<ConfirmationDialogArg>(argBase);
 
             _titleText.text = arg.TitleText;
             _bodyText.text = arg.BodyText;
