@@ -14,6 +14,9 @@ namespace Reversi.Dialog
         [SerializeField]
         private ConfirmationDialog _confirmationDialog = null;
 
+        [SerializeField]
+        private MultiPlayDialog _multiPlayDialog = null;
+
         public DialogBase Open<T>(DialogArgBase arg)
         {
             var type = typeof(T);
@@ -22,6 +25,11 @@ namespace Reversi.Dialog
             if (type == typeof(ConfirmationDialog))
             {
                 dialog = _confirmationDialog;
+            }
+
+            if (type == typeof(MultiPlayDialog))
+            {
+                dialog = _multiPlayDialog;
             }
 
             if (dialog != null)

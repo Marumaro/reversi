@@ -83,6 +83,8 @@ MonoBehaviour:
   _dialogRoot: {fileID: 6862053161335546839}
   _confirmationDialog: {fileID: 1947149714797586603, guid: 00ed27a92c96a124da1d511ec5489cd4,
     type: 3}
+  _multiPlayDialog: {fileID: 7935796416986336968, guid: 9f912fae5705ed54b8b334fa62d406db,
+    type: 3}
 --- !u!1 &1345280031968688412
 GameObject:
   m_ObjectHideFlags: 0
