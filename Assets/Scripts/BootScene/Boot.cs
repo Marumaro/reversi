@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace BootScene
+namespace Reversi.Scene
 {
-    public class BootSceneManager : MonoBehaviour
+    public class Boot : MonoBehaviour
     {
         [SerializeField]
         private GameObject _dontDestroyObject = null;
@@ -12,7 +11,9 @@ namespace BootScene
         {
             DontDestroyOnLoad(_dontDestroyObject);
 
-            SceneManager.LoadSceneAsync("TitleScene");
+            var arg = new TitleSceneArg("SceneArg Test");
+
+            SceneTransitionManager.Instance.Transition(SceneBuildIndex.TitleScene, arg);
         }
     }
 }
